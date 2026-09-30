@@ -661,6 +661,19 @@ def seed_demo_data(request):
         admin_user.save()
         UserProfile.objects.get_or_create(user=admin_user, defaults={'is_admin': True, 'department': 'Hospitality'})
 
+    # Create Mani Chandu user (Admin / Superuser)
+    mani_user, m_created = User.objects.get_or_create(
+        username='manichandu',
+        defaults={'email': 'maddelamanichandu@gmail.com', 'first_name': 'Mani', 'last_name': 'Chandu', 'is_staff': True, 'is_superuser': True}
+    )
+    if m_created:
+        mani_user.set_password('maddelamani')
+        mani_user.save()
+        UserProfile.objects.get_or_create(
+            user=mani_user,
+            defaults={'is_admin': True, 'student_id': 'MC2026-001', 'department': 'Management & Engineering', 'phone': '9876543210'}
+        )
+
     # Create demo student
     student_user, s_created = User.objects.get_or_create(
         username='student',
