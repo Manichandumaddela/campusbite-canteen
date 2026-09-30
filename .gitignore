@@ -1,0 +1,21 @@
+# Python & Django
+*.pyc
+__pycache__/
+*.sqlite3
+db.sqlite3
+/backend/media/
+/backend/venv/
+.env
+*.log
+
+# Node & Frontend
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
