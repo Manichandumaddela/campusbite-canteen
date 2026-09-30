@@ -31,7 +31,9 @@ export default function Login() {
   };
 
   const handleDemoFill = (role) => {
-    if (role === 'student') {
+    if (role === 'manichandu') {
+      setForm({ username: 'manichandu', password: 'maddelamani' });
+    } else if (role === 'student') {
       setForm({ username: 'student', password: 'student123' });
     } else {
       setForm({ username: 'admin', password: 'admin123' });
@@ -48,22 +50,30 @@ export default function Login() {
             <Sparkles className="w-4 h-4 text-orange-500" />
             <span>Instant Demo Logins (1-Click Fill)</span>
           </div>
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
             <button
               type="button"
-              onClick={() => handleDemoFill('student')}
-              className="bg-orange-50 hover:bg-orange-100 border border-orange-200/80 text-orange-800 p-2.5 rounded-2xl text-xs font-bold transition text-left"
+              onClick={() => handleDemoFill('manichandu')}
+              className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white p-2.5 rounded-2xl text-xs font-bold transition text-left shadow-sm shadow-orange-500/20"
             >
-              <span className="block font-black">👨‍🎓 Student Account</span>
-              <span className="text-[10px] text-orange-600 block opacity-90">student / student123</span>
+              <span className="block font-black">👑 Mani Chandu</span>
+              <span className="text-[10px] text-orange-100 block opacity-95">manichandu / maddelamani</span>
             </button>
             <button
               type="button"
               onClick={() => handleDemoFill('admin')}
               className="bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-900 p-2.5 rounded-2xl text-xs font-bold transition text-left"
             >
-              <span className="block font-black">🛡️ Admin Account</span>
+              <span className="block font-black">🛡️ Admin</span>
               <span className="text-[10px] text-slate-600 block opacity-90">admin / admin123</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => handleDemoFill('student')}
+              className="bg-orange-50 hover:bg-orange-100 border border-orange-200/80 text-orange-800 p-2.5 rounded-2xl text-xs font-bold transition text-left"
+            >
+              <span className="block font-black">👨‍🎓 Student</span>
+              <span className="text-[10px] text-orange-600 block opacity-90">student / student123</span>
             </button>
           </div>
         </div>
